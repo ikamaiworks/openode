@@ -1,8 +1,9 @@
-FROM python:alpine
+FROM nginx:stable-alpine
 
+WORKDIR /usr/share/nginx/html
 
-WORKDIR /home
-COPY . ./home
+# Bundle app source
+COPY . .
+RUN chmod -R 755 /usr/share/nginx/html
 
-RUN pip install fastapi uvicorn
-CMD python -u /home/run.py
+CMD nginx -g "daemon off;"

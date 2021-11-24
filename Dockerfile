@@ -1,9 +1,6 @@
-FROM alpine
+FROM python:alpine
 
-RUN apk add --no-cache \
-  python
-  
-  
+
 WORKDIR /home
 COPY . ./home
 

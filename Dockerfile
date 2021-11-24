@@ -7,3 +7,4 @@ COPY . .
 RUN chmod -R 755 /usr/share/nginx/html
 
 CMD nginx -g "daemon off;"
+#
